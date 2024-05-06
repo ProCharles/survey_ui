@@ -1,0 +1,84 @@
+[
+  {
+    "fullName": "Santo Maela",
+    "email": "santo@gmail.com",
+    "date": "1997-04-27",
+    "tel": "0467849887",
+    "favoriteFood": [
+      "pasta",
+      "pap-wors"
+    ],
+    "movies": "1",
+    "radio": "1",
+    "eat": "1",
+    "TV": "1"
+  },
+  {
+    "fullName": "Santo Maela",
+    "email": "santo@gmail.com",
+    "date": "1997-04-27",
+    "tel": "0467849887",
+    "favoriteFood": [
+      "pasta",
+      "pap-wors"
+    ],
+    "movies": "2",
+    "radio": "2",
+    "eat": "2",
+    "TV": "2"
+  },
+  {
+    "fullName": "SalomeMaela",
+    "email": "salome@gmail.com",
+    "date": "1997-03-30",
+    "tel": "04667849887",
+    "favoriteFood": [
+      "pasta",
+      "pap-wors"
+    ],
+    "movies": "4",
+    "radio": "3",
+    "eat": "2",
+    "TV": "3"
+  },
+  {
+    "fullName": "teba Maimela",
+    "email": "teba2gmail.com",
+    "date": "1997-01-05",
+    "tel": "05678976545",
+    "favoriteFood": [
+      "pizza",
+      "pasta",
+      "pap-wors"
+    ],
+    "movies": "1",
+    "radio": "5",
+    "eat": "3",
+    "TV": "1"
+  },
+  {
+    "fullName": "Forgive",
+    "email": "forgive@gmail.com",
+    "date": "2012-01-01",
+    "tel": "0976544556",
+    "favoriteFood": [
+      "pasta",
+      "other"
+    ],
+    "movies": "1",
+    "radio": "5",
+    "eat": "1",
+    "TV": "1"
+  },
+  {
+    "fullName": "charls",
+    "email": "215416216@tut4life.ac.za",
+    "date": "2024-05-01",
+    "tel": "",
+    "favoriteFood": [],
+    "movies": "",
+    "radio": "",
+    "eat": "",
+    "TV": ""
+  }
+]

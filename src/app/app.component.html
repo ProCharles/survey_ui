@@ -1,0 +1,113 @@
+<!-- Survey Container -->
+<div class="survey-container">
+  <div class="header">
+    <!-- Survey Title -->
+    <label><b>_Surveys</b></label>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <label (click)="viewResultsFalse ()">FILL OUT SURVEY</label>
+        <label (click)="getSurveys()">VIEW SURVEY RESULTS</label>
+    </div>
+  </div>
+  
+  <div class="make-survey" *ngIf="!viewSurveyResults">
+    <!-- Personal Details Section -->
+  <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+    <div class="personal-details">
+      <label>Personal Details:</label>
+      <div class="inputs">
+        <label>Full Names</label>
+        <input type="text" formControlName="fullName" name="fullName">
+        <label>Email</label>
+        <input type="email" formControlName="email" name="email">
+        <label>Date of Birth</label>
+        <input type="date" formControlName="date">
+        <label>Contact Number</label>
+        <input type="tel" formControlName="tel">
+      </div>
+    </div>
+    
+    <!-- Favorite Food Section -->
+    <div class="favorite-food">
+      <label>What is your favorite food?</label>
+      <label><input type="checkbox" (change)="handleCheckboxChange($event)" value="pizza"> Pizza</label>
+      <label><input type="checkbox" (change)="handleCheckboxChange($event)" value="pasta"> Pasta</label>
+      <label><input type="checkbox" (change)="handleCheckboxChange($event)" value="pap-wors"> Pap and Wors</label>
+      <label><input type="checkbox" (change)="handleCheckboxChange($event)" value="other"> Other</label>
+    </div>
+    
+    <!-- Agreement Scale Section -->
+    <div class="agreement-scale">
+      <p>Please rate your level of agreement on a scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree."</p>
+      <table>
+        <tr>
+          <th></th>
+          <th>Strongly Agree</th>
+          <th>Agree</th>
+          <th>Neutral</th>
+          <th>Disagree</th>
+          <th>Strongly Disagree</th>
+        </tr>
+        <tr>
+          <td>I like to watch movies</td>
+          <td><input type="radio" formControlName="movies" name="movies" value="1"></td>
+          <td><input type="radio" formControlName="movies" name="movies" value="2"></td>
+          <td><input type="radio" formControlName="movies" name="movies" value="3"></td>
+          <td><input type="radio" formControlName="movies" name="movies" value="4"></td>
+          <td><input type="radio" formControlName="movies" name="movies" value="5"></td>
+        </tr>
+        <tr>
+          <td>I like to listen to radio</td>
+          <td><input type="radio" formControlName="radio" name="radio" value="1"></td>
+          <td><input type="radio" formControlName="radio" name="radio" value="2"></td>
+          <td><input type="radio" formControlName="radio" name="radio" value="3"></td>
+          <td><input type="radio" formControlName="radio" name="radio" value="4"></td>
+          <td><input type="radio" formControlName="radio" name="radio" value="5"></td>
+        </tr>
+        <tr>
+          <td>I like to eat out</td>
+          <td><input type="radio" formControlName="eat" name="eat" value="1"></td>
+          <td><input type="radio" formControlName="eat" name="eat" value="2"></td>
+          <td><input type="radio" formControlName="eat" name="eat" value="3"></td>
+          <td><input type="radio" formControlName="eat" name="eat" value="4"></td>
+          <td><input type="radio" formControlName="eat" name="eat" value="5"></td>
+        </tr>
+        <tr>
+          <td>I like to watch TV</td>
+          <td><input type="radio" formControlName="TV" name="TV" value="1"></td>
+          <td><input type="radio" formControlName="TV" name="TV" value="2"></td>
+          <td><input type="radio" formControlName="TV" name="TV" value="3"></td>
+          <td><input type="radio" formControlName="TV" name="TV" value="4"></td>
+          <td><input type="radio" formControlName="TV" name="TV" value="5"></td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Submit Button -->
+    <div class="btn">
+      <button type="submit">SUBMIT</button>
+    </div>
+    </form>
+  </div>
+
+  <div class="view-result" *ngIf="viewSurveyResults">
+    <div id="surveyResults">
+      <h2>Survey Results</h2>
+      <p>Total number of surveys: <span id="totalSurveys">{{totalSurveys}}</span></p>
+      <p>Average Age: <span id="averageAge">{{roundOffNums(ageAvg, 1)}}</span></p>
+      <p>Oldest person who participated: <span id="oldestAge">{{oldestSurveyer}}</span></p>
+      <p>Youngest person who participated: <span id="youngestAge">{{youngestSurveyer}}</span></p>
+      <br>
+      <p>Percentage of people who like Pizza: <span id="pizzaPercentage">{{roundOffNums(pizzaPerc, 2)}}&nbsp;%</span></p>
+      <p>Percentage of people who like Pasta: <span id="pastaPercentage">{{roundOffNums(pastaPerc, 2)}}&nbsp;%</span></p>
+      <p>Percentage of people who like Pap and Wors: <span id="papWorsPercentage">{{roundOffNums(papNVorsPerc, 2)}}&nbsp;%</span></p>
+      <br>
+      <p>People who like to watch movies: <span id="moviesRating">{{roundOffNums(movieAvg, 2)}}</span></p>
+      <p>People who like to listen to radio: <span id="radioRating">{{roundOffNums(radioAvg, 2)}}</span></p>
+      <p>People who like to eat out: <span id="eatOutRating">{{roundOffNums(outEatingAvg, 2)}}</span></p>
+      <p>People who like to watch TV: <span id="tvRating">{{roundOffNums(tvAvg, 2)}}</span></p>
+    </div>
+  </div>
+  
+</div>
